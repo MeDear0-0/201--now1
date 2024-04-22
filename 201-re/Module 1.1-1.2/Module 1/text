@@ -1,0 +1,42 @@
+Employee Management System
+Instruction:
+- Create the EmployeeManager class to manage employee records, including adding, 
+removing, updating, finding, and sorting employee information.
+Class EmployeeManager
+Constructor
+• constructor(): 
+• Parameters: -
+• creates an empty array in the property employees
+Properties
+• employees: employees, array of object employee.
+{
+id: id, type: number,
+name: Name, type: string,
+position: position, type: String
+}
+Methods
+• addEmployee(name, position)
+• Parameters: name type: string, position type: string
+• Adds a new employee to the employees array. Generate a unique id for 
+each employee. 
+Return object of new employee or null if the employee exist
+• removeEmployee(id)
+• Parameters: id type: number
+• Removes an employee by employee id. 
+Return false if the employee doesn't exist
+• findEmployeeByName(name)
+• Parameters: name type: string
+• Searches for employees by name, case-insensitivity. Return array of all 
+matching employees.
+• sortEmployeeByName()
+• Parameters: -
+• Sort employees array by employee name
+• updateEmployee (employee)
+• Parameters: employee type: object of employee
+• Update employee by employee id.
+*For Module 1.1
+• promoteEmployee(id, newPosition)
+• Parameters: id type: number, newPosition type: string
+• Finds an employee by their ID and updates their position to the new position 
+provided. Logs the promotion. Returns true if the employee was found and 
+promoted, false otherwise.
