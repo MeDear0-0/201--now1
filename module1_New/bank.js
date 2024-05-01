@@ -52,10 +52,11 @@ class BankAccount {
     }
 
     getTransaction(id){
-        if(this.transactions.id === id){
-            return this.transactions
+         const transactionID = this.transactions.findIndex(tran => tran.id === id)
+        if(transactionID === -1){
+            return null
         }
-        return null
+        return transactionID
        
     }
 
