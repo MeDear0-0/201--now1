@@ -1,0 +1,65 @@
+Constructor ใน JavaScript
+
+1.1 ถาม: Constructor ใน JavaScript คืออะไร?
+
+1.1 คำตอบ: Constructor คือฟังก์ชันที่ถูกเรียกขึ้นเมื่อสร้าง instance ของ object และมักใช้เพื่อกำหนดค่าเริ่มต้น (initialize) ใน object.
+
+การสร้าง Object ด้วย Constructor
+
+2.1 ถาม: ใน JavaScript, การสร้าง object ด้วย Constructor ทำอย่างไร?
+
+2.1 คำตอบ: ใช้คีย์เวิร์ด new เพื่อเรียก Constructor function เพื่อสร้าง object.
+
+Properties ของ Object
+
+3.1 ถาม: Properties ของ object คืออะไรและมีกี่ประเภท?
+
+3.1 คำตอบ: Properties คือค่าที่ถูกเก็บไว้ใน object. มี 2 ประเภทคือ own properties และ prototype properties.
+
+การเข้าถึง Properties ของ Object
+
+4.1 ถาม: วิธีการเข้าถึง properties ของ object ใน JavaScript คือ?
+
+4.1 คำตอบ: ใช้ dot notation (object.property) หรือ bracket notation (object['property']).
+
+การเพิ่ม Properties ใน Object
+
+5.1 ถาม: วิธีการเพิ่ม properties ใน object ในภาษา JavaScript คือ?
+
+5.1 คำตอบ: ใช้ dot notation หรือ bracket notation และกำหนดค่าให้กับ property.
+
+การใช้ Methods ใน Object
+
+6.1 ถาม: Methods ใน object คืออะไรและมีจำนวนมากที่เป็น Built-in Methods ไหนบ้าง?
+
+6.1 คำตอบ: Methods คือ function ที่ถูกเก็บใน object. Built-in Methods อาจรวมถึง toString(), valueOf(), hasOwnProperty(), และอื่น ๆ.
+
+การสร้าง Methods ใน Object
+
+7.1 ถาม: วิธีการสร้าง methods ใน object ใน JavaScript คือ?
+
+7.1 คำตอบ: สามารถสร้าง methods ได้โดยกำหนดฟังก์ชันเป็นค่าของ property ใน object.
+
+การใช้ this ใน Methods
+
+8.1 ถาม: this ใน context ของ methods ใน object มีความหมายอย่างไร?
+
+8.1 คำตอบ: this ใน context ของ methods ใช้เพื่ออ้างถึง object ที่เรียกใช้ method นั้น.
+
+การใช้ Constructor สร้าง Object พร้อม Methods
+
+9.1 ถาม: วิธีการใช้ Constructor สร้าง object พร้อม methods ใน JavaScript คือ?
+
+9.1 คำตอบ: ใน Constructor function, เพิ่ม properties และ methods ใน object โดยใช้ this.
+
+การใช้ Prototype สร้าง Methods สำหรับทุก Object
+
+10.1 ถาม: Prototype ใน JavaScript มีความสำคัญอย่างไรในการสร้าง methods สำหรับทุก object?
+
+10.1 คำตอบ: Prototype ใช้สร้าง methods ที่สามารถใช้ได้ทุก object ที่ถูกสร้างจาก Constructor.
+
+การใช้ Constructor แบบ Class
+
+11.1 ถาม: การใช้ Constructor แบบ Class ใน JavaScript คืออะไร?
+
+11.1 คำตอบ: Class ใน JavaScript มี Constructor เพื่อสร้าง object และ methods สามารถถูกเพิ่มใน class ได้.

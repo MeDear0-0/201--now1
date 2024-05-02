@@ -1,0 +1,274 @@
+/*1.
+Instruction:
+- Write class Book. Then, add a method to the object that outputs information about the
+book.
+Class Book
+Constructor
+• Constructor(title, author, yearPublished): This initializes the properties
+'title', 'author', and 'yearPublished'. If they are empty, it assigns 'no title', 'no
+author', and 0 respectively.
+Properties
+• title: type String
+• author: type String
+• yearPublished: type number
+Methods
+• getInfo(): This method return a string that combines the book's title, author,
+and year of publication.
+Initiate code:
+// Creating class Book
+// Insert your code here*/
+// Creating class Book
+class Book {
+    // Constructor(title, author, yearPublished): This initializes the properties 'title', 'author', and 'yearPublished'. If they are empty, it assigns 'no title', 'no author', and 0 respectively.
+    constructor(title, author, yearPublished) {
+      // Use the ternary operator to assign the properties or the default values
+      this.title = title ? title : 'no title';
+      this.author = author ? author : 'no author';
+      this.yearPublished = yearPublished ? yearPublished : 0;
+    }
+  
+    // getInfo(): This method return a string that combines the book's title, author, and year of publication.
+    getInfo() {
+      // Use template literals to return the formatted string
+      return `${this.title} by ${this.author}, published in ${this.yearPublished}`;
+    }
+  }
+
+  /*2.
+  Instruction:
+  - Create an object Book reference ‘practice 1’. Use a constructor Constructor(title,
+  author, yearPublished. Additionally, use a 'getInfo()' method.
+  Initiate code:
+  // Insert your code here*/
+
+// Create an object Book using the class Book from practice 1
+// Use a constructor Constructor(title, author, yearPublished)
+// Additionally, use a 'getInfo()' method
+
+// Import the class Book from practice 1
+const Book = require('./practice1.js');
+
+// Create an object Book with some example values
+let book = new Book('The Hitchhiker\'s Guide to the Galaxy', 'Douglas Adams', 1979);
+
+// Use the 'getInfo()' method to output information about the book
+console.log(book.getInfo()); // The Hitchhiker's Guide to the Galaxy by Douglas Adams, published in 1979
+
+/*3.
+Instruction:
+- Creating a library system using class Book and Library.
+Class Book:
+Constructor
+• Constructor(title, author, pages, genre): This initializes the properties 'title',
+'author' , ' pages' and 'genre'.
+Properties
+• title: type string
+• author: type string
+• pages: type number
+• genre: type string
+Methods
+• getSummary() - Returns a string summary of the book ex: .
+"Title: Harry Wick, Author: Conan, Pages: 345, Genre: Sci-Fi"
+Class Library:
+Constructor
+• Constructor(name): This initializes the properties 'name' and creates an
+empty array in the property books
+Properties
+• name: type string
+• books: type array of Book objects, initially empty.
+Methods
+• addBook(newBook) - Accepts a Book object and adds it to the books array.
+• getBooksByGenre(genre) - Returns an array of books that match the
+specified genre.
+• getTotalPagesByGenre(genre) - Returns the total number of pages for all
+books of a specified genre.*/
+
+// Creating class Book
+class Book {
+    // Constructor(title, author, pages, genre): This initializes the properties 'title', 'author' , ' pages' and 'genre'.
+    constructor(title, author, pages, genre) {
+      this.title = title;
+      this.author = author;
+      this.pages = pages;
+      this.genre = genre;
+    }
+  
+    // getSummary() - Returns a string summary of the book ex: .
+    // "Title: Harry Wick, Author: Conan, Pages: 345, Genre: Sci-Fi"
+    getSummary() {
+      return `Title: ${this.title}, Author: ${this.author}, Pages: ${this.pages}, Genre: ${this.genre}`;
+    }
+  }
+  
+  // Creating class Library
+  class Library {
+    // Constructor(name): This initializes the properties 'name' and creates an empty array in the property books
+    constructor(name) {
+      this.name = name;
+      this.books = [];
+    }
+  
+    // addBook(newBook) - Accepts a Book object and adds it to the books array.
+    addBook(newBook) {
+      this.books.push(newBook);
+    }
+  
+    // getBooksByGenre(genre) - Returns an array of books that match the specified genre.
+    getBooksByGenre(genre) {
+      // Declare an empty array to store the matching books
+      let booksByGenre = [];
+  
+      // Loop through the books array and check if each book's genre matches the given genre
+      for (let book of this.books) {
+        if (book.genre === genre) {
+          // If the book's genre matches, push it to the booksByGenre array
+          booksByGenre.push(book);
+        }
+      }
+  
+      // Return the booksByGenre array
+      return booksByGenre;
+    }
+  
+    // getTotalPagesByGenre(genre) - Returns the total number of pages for all books of a specified genre.
+    getTotalPagesByGenre(genre) {
+      // Declare a variable to store the total number of pages
+      let totalPages = 0;
+  
+      // Loop through the books array and check if each book's genre matches the given genre
+      for (let book of this.books) {
+        if (book.genre === genre) {
+          // If the book's genre matches, add its pages to the totalPages
+          totalPages += book.pages;
+        }
+      }
+  
+      // Return the totalPages
+      return totalPages;
+    }
+  }
+
+/*4
+Instruction:
+- Create a 'Book' object and a 'Library' object for 'Practice 3'. Use a constructor and
+methods in both classes.
+Initiate code:
+// Insert your code here*/
+
+// Import the classes Book and Library from 'Practice 3'
+const Book = require('./practice3.js').Book;
+const Library = require('./practice3.js').Library;
+
+// Create a 'Book' object with some example values
+let book1 = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 1178, 'Fantasy');
+
+// Use the 'getSummary()' method to output information about the book
+console.log(book1.getSummary()); // Title: The Lord of the Rings, Author: J.R.R. Tolkien, Pages: 1178, Genre: Fantasy
+
+// Create a 'Library' object with some example name
+let library = new Library('My Library');
+
+// Use the 'addBook()' method to add the book to the library
+library.addBook(book1);
+
+// Use the 'getBooksByGenre()' method to get an array of books that match a genre
+console.log(library.getBooksByGenre('Fantasy')); // [ Book { title: 'The Lord of the Rings', author: 'J.R.R. Tolkien', pages: 1178, genre: 'Fantasy' } ]
+
+// Use the 'getTotalPagesByGenre()' method to get the total number of pages for all books of a genre
+console.log(library.getTotalPagesByGenre('Fantasy')); // 1178
+
+/*5.
+Instruction:
+- Create class Elevator with the following specifications:
+Class Elevator:
+Constructor
+• Constructor(maxFloor, minFloor): This initializes the properties
+'maxFloor', 'minFloor' and set 'currentFloor' to 0
+Properties
+• currentFloor: The floor where the elevator currently is. , type number
+• maxFloor: The highest floor the elevator can go to. , type number
+• minFloor: The lowest floor the elevator can go to , type number
+Methods
+• goUp(): Increases currentFloor by 1, but not above maxFloor.
+• goDown(): Decreases currentFloor by 1, but not below minFloor.
+• goToFloor(floor): Takes a floor number and sets currentFloor to that
+floor if it's within range.
+• displayFloor(): Prints the current floor to the console.*/
+// Creating class Elevator
+class Elevator {
+    // Constructor(maxFloor, minFloor): This initializes the properties 'maxFloor', 'minFloor' and set 'currentFloor' to 0
+    constructor(maxFloor, minFloor) {
+      this.maxFloor = maxFloor;
+      this.minFloor = minFloor;
+      this.currentFloor = 0;
+    }
+  
+    // goUp(): Increases currentFloor by 1, but not above maxFloor.
+    goUp() {
+      // Check if the current floor is below the maximum floor
+      if (this.currentFloor < this.maxFloor) {
+        // If yes, increment the current floor by 1
+        this.currentFloor++;
+      } else {
+        // If no, print a message that the elevator cannot go higher
+        console.log('The elevator cannot go higher than the maximum floor.');
+      }
+    }
+  
+    // goDown(): Decreases currentFloor by 1, but not below minFloor.
+    goDown() {
+      // Check if the current floor is above the minimum floor
+      if (this.currentFloor > this.minFloor) {
+        // If yes, decrement the current floor by 1
+        this.currentFloor--;
+      } else {
+        // If no, print a message that the elevator cannot go lower
+        console.log('The elevator cannot go lower than the minimum floor.');
+      }
+    }
+  
+    // goToFloor(floor): Takes a floor number and sets currentFloor to that floor if it's within range.
+    goToFloor(floor) {
+      // Check if the floor number is within the range of minFloor and maxFloor
+      if (floor >= this.minFloor && floor <= this.maxFloor) {
+        // If yes, set the current floor to the floor number
+        this.currentFloor = floor;
+      } else {
+        // If no, print a message that the floor number is invalid
+        console.log('The floor number is invalid. Please enter a floor number between the minimum and maximum floors.');
+      }
+    }
+  
+    // displayFloor(): Prints the current floor to the console.
+    displayFloor() {
+      // Print the current floor to the console
+      console.log(`The elevator is on floor ${this.currentFloor}.`);
+    }
+  }
+
+/*6
+Instruction:
+- Create a 'Elevator' object for 'Practice 5'. Use a constructor and methods in class.
+Initiate code:
+// Insert your code here*/
+class Elevator {
+    constructor() {
+      this.currentFloor = 1;
+    }
+  
+    moveToFloor(targetFloor) {
+      console.log(`Moving from floor ${this.currentFloor} to floor ${targetFloor}.`);
+      this.currentFloor = targetFloor;
+    }
+  
+    reportCurrentFloor() {
+      console.log(`Currently on floor ${this.currentFloor}.`);
+    }
+  }
+  
+  // Example usage:
+  const elevator = new Elevator();
+  elevator.reportCurrentFloor(); // Output: Currently on floor 1
+  elevator.moveToFloor(3); // Output: Moving from floor 1 to floor 3
+  elevator.reportCurrentFloor(); // Output: Currently on floor 3
+  

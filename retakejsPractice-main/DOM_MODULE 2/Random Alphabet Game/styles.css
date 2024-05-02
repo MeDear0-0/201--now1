@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+#alphabetDisplay {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+button#generateButton {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+}
+
+button#resetButton {
+    background-color: #f44336;
+    color: white;
+    border: none;
+}

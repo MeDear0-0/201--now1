@@ -1,0 +1,59 @@
+การประกาศตัวแปร (Variables)
+
+1.1 ถาม: ใน JavaScript, การประกาศตัวแปรมีกี่วิธีบ้าง?
+
+1.1 คำตอบ: มีสามวิธีในการประกาศตัวแปรใน JavaScript คือ var, let, และ const.
+
+ประเภทของข้อมูล (Data Types)
+
+2.1 ถาม: กี่ประเภทของข้อมูล (Data Types) มีใน JavaScript?
+
+2.1 คำตอบ: มี 7 ประเภทของข้อมูลใน JavaScript คือ undefined, null, boolean, number, string, object, และ symbol.
+
+การแปลงประเภทข้อมูล (Type Conversion)
+
+3.1 ถาม: ใน JavaScript, การแปลงประเภทข้อมูล (Type Conversion) คืออะไร?
+
+3.1 คำตอบ: Type Conversion หรือ Type Casting คือกระบวนการที่ใช้เพื่อเปลี่ยนประเภทของข้อมูลจากประเภทหนึ่งไปยังประเภทอื่น.
+
+Scope ของตัวแปร (Variable Scope)
+
+4.1 ถาม: คำว่า "Variable Scope" หมายถึงอะไรใน JavaScript?
+
+4.1 คำตอบ: Variable Scope หมายถึงส่วนของโปรแกรมที่ตัวแปรสามารถเข้าถึงได้ ซึ่งอาจแบ่งเป็น Global Scope และ Local Scope.
+
+การประกาศฟังก์ชัน (Function Declaration)
+
+5.1 ถาม: วิธีการประกาศฟังก์ชันใน JavaScript คือ?
+
+5.1 คำตอบ: ฟังก์ชันสามารถถูกประกาศโดยใช้คีย์เวิร์ด function.
+
+Callback Functions
+
+6.1 ถาม: Callback Functions คืออะไรและในทางปฏิบัติมักถูกใช้ในสถานการณ์ใด?
+
+6.1 คำตอบ: Callback Functions คือฟังก์ชันที่ถูกส่งไปเป็นพารามิเตอร์ให้กับฟังก์ชันอื่น ๆ และมักถูกใช้ในการจัดการกับ asynchronous operations.
+
+การใช้ Arrow Functions
+
+7.1 ถาม: Arrow Functions คืออะไรและมีวิธีใดในการใช้งาน?
+
+7.1 คำตอบ: Arrow Functions เป็นรูปแบบของฟังก์ชันที่สั้นและมักถูกใช้ในกรณีที่ต้องการสร้างฟังก์ชันอย่างสั้นและกระชับ.
+
+การใช้ Rest Parameters
+
+8.1 ถาม: Rest Parameters ใน JavaScript ใช้ทำอะไร?
+
+8.1 คำตอบ: Rest Parameters ใช้เพื่อรับพารามิเตอร์ที่เหลือของฟังก์ชันในรูปของ array.
+
+การใช้ Spread Operator
+
+9.1 ถาม: Spread Operator ใน JavaScript มีไวยากรณ์และใช้งานอย่างไร?
+
+9.1 คำตอบ: Spread Operator (...) ใช้ในการกระจาย elements ของ array หรือ properties ของ object.
+
+การใช้ Template Literals
+
+10.1 ถาม: Template Literals ใน JavaScript มีประโยชน์อย่างไร?
+
+10.1 คำตอบ: Template Literals ใช้สร้าง strings ที่สามารถประกอบด้วย expressions ได้.

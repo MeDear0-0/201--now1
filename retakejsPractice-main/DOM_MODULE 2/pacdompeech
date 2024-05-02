@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Member Form</title>
+    <style>
+      #memberDetail {
+        margin-top: 5px;
+        width: 500px;
+        padding: 15px;
+        border: 1px solid gray;
+      }
+      input {
+        width: 50%;
+        margin-bottom: 10px;
+      }
+      #member {
+        background-color: green;
+        border: none;
+        color: white;
+        padding: 8px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Customer Form</h1>
+    <div id="buttonPanel">
+      <button id="member">Member</button>
+    </div>
+    <div id="memberDetail">
+      <div id="searchMember"></div>
+      <div id="foundMember"></div>
+    </div>
+    <script src="./memberForm.js" type="module"></script>
+  </body>
+</html>
+
+----
+// credit: https://www.fakenamegenerator.com/gen-random-us-us.php
+function memberManagement() {
+    const members = [
+      {
+        id: 1001,
+        firstname: 'Jason',
+        lastname: 'Parsley',
+        email: 'JasonParsley@teleworm.us',
+        address: '3512 Florence Street Longview, TX 75601'
+      },
+      {
+        id: 1002,
+        firstname: 'Mack',
+        lastname: 'Pierce',
+        email: 'MackKPierce@dayrep.com',
+        address: '3484 Hiddenview Drive Garfield Heights, OH 44128'
+      },
+      {
+        id: 1003,
+        firstname: 'Zaida',
+        lastname: 'Daniels',
+        email: 'ZaidaDaniels@dayrep.com',
+        address: '1367 Clarksburg Park Road Sedona, AZ 86336'
+      },
+      {
+        id: 1004,
+        firstname: 'Lawrence',
+        lastname: 'McGinnis',
+        email: 'LawrenceMMcGinnis@dayrep.com',
+        address: '1723 Roane Avenue Bethesda, MD 20014'
+      }
+    ]
+    function getMembers() {
+      return members
+    }
+    function findMember(id) {
+      return members.find((member) => member.id === id)
+    }
+    return { getMembers, findMember }
+  }
+  export { memberManagement }
+  // module.exports = memberManagement
+
+---
+import { memberManagement } from './data/member.js'
+const { getMembers, findMember } = memberManagement()
+
+//your student id, firstname, and lastname here
+function memberForm() {
+  const addEventHandler = () => {
+    console.log(getMembers());
+    const memberButton = document.getElementById('member')
+    memberButton.addEventListener('click', memberHandler)
+
+  }
+
+  const memberHandler = () => {
+    
+    const divmemberDetail = document.getElementById("memberDetail")
+    const getMem = document.getElementById("searchMember")
+    const newP = document.createElement("p")
+    const newinput = document.createElement("input")
+    const newbtn = document.createElement("button")
+    divmemberDetail.appendChild(getMem)
+    
+
+    if(getMem){
+    newbtn.textContent = "search"
+    newP.textContent = "Your id is : " 
+    newinput.id = "memberId"
+    newbtn.addEventListener('click', searchHandler)
+   
+
+    getMem.append(newP, newinput, newbtn)
+    
+    }
+  }
+
+  const searchHandler = () => {
+    const divmemberDetail = document.getElementById("memberDetail")
+    const getdivFound = document.getElementById("foundMember")
+    const getMemIdInput = document.getElementById("memberId")
+    const id = parseInt(getMemIdInput.value)
+    divmemberDetail.appendChild(getdivFound)
+
+    if(findMember(id)){ //à¹à¸à¹à¸à¸§à¹à¸²à¸¡à¸µ id à¸­à¸±à¸à¸à¸µà¹à¸£à¸¶à¸à¹à¸²à¸§
+
+    const memId = document.createElement("p") // à¸ªà¸£à¹à¸²à¸
+    const memFirst = document.createElement("p")
+    const memLast = document.createElement("p")
+    const memEmail = document.createElement("p")
+    const memAddress = document.createElement("p")
+
+    memId.textContent = "id: " + findMember(id).id // à¸ªà¸£à¹à¸²à¸ text 
+    memFirst.textContent = "firstname: " + findMember(id).firstname
+    memLast.textContent = "lastname: " + findMember(id).lastname
+    memEmail.textContent = "email: " + findMember(id).email
+    memAddress.textContent = "address: " + findMember(id).address
+
+      getdivFound.append(memId , memFirst , memLast , memEmail , memAddress) // append à¹à¸«à¹à¹à¸à¹à¸ à¸¥à¸¹à¸à¸à¸­à¸ getdivFound
+
+      getMemIdInput.value  = '' // à¹à¸¡à¸·à¹à¸­ à¸à¸à¸à¸¸à¹à¸¡ search à¸à¹à¸²à¹à¸à¸à¹à¸­à¸ input à¸à¸°à¸«à¸²à¸¢à¹à¸
+      getMemIdInput.addEventListener('click', () => {
+        getdivFound.textContent = ''
+
+        // getdivFound.forEach(element => {
+        //   console.log(element)
+        // });
+      })
+
+
+    }
+
+  }
+
+  return {
+    addEventHandler
+  }
+}
+
+const { addEventHandler } = memberForm()
+addEventHandler()
